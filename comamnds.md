@@ -57,10 +57,27 @@ docker volume rm $(docker volume ls -f dangling=true -q)
 
 #### Login to Docker registry:
 ```bash
-$ docker login -u user -p pass hub.docker.com
+$ docker login -u user -p pass registry.example.com
 ```
 
 #### Push image to remote registry: (Must login first)
 ```bash
 $ docker push image-name:latest
+```
+
+### Docker hub
+
+#### Login to docker hub
+```bash
+$ docker login -u user -p pass
+```
+
+#### Commit containers
+```bash
+$ docker commit <container ID> <repo name>/<Name you want to give the image>
+```
+
+### Push to docker hub
+```bash
+$ docker push <repo name>/<Name you gave the image>
 ```

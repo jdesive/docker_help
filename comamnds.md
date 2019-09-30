@@ -19,9 +19,31 @@ $ docker rm $(docker ps -a -q)
 $ docker rm $(docker ps -a -f status=exited -q)
 ```
 
-#### Stop & Remove all containers
+#### Stop & Remove all containers:
 ```bash
 $ docker stop $(docker ps -a -q) | docker rm $(docker ps -a -q)
+```
+
+#### View logs of a conatainer:
+Replace `<container>` with name or id of container your want to view the logs of. 
+```bash
+$ docker logs -f <container>
+```
+
+#### Execute on a container:
+Replace `<container>` with name or id of container your want to execute a command on. 
+Replace `<command>` with the command you want to execute.
+```bash
+$ docker exec <container> <command>
+```
+
+#### Execute on a container: (Interactive)
+Replace `<container>` with name or id of container your want to execute a command on. 
+```bash
+$ docker exec -it <container> sh
+```
+```bash
+$ docker exec -it <container> bash
 ```
 
 ## Images
